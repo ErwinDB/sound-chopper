@@ -1,40 +1,10 @@
 #pragma once
 
 #include "PluginProcessor.h"
+#include "MidiModePanel.h"
+#include "FilterPanel.h"
+#include "AdvancedPanel.h"
 #include <array>
-
-// ============================================================================
-//  LedIndicator – a small coloured circle that turns on/off
-// ============================================================================
-class LedIndicator : public juce::Component
-{
-public:
-    explicit LedIndicator (juce::Colour onColour) : colour (onColour) {}
-
-    void setOn (bool shouldBeOn)
-    {
-        if (on != shouldBeOn)
-        {
-            on = shouldBeOn;
-            repaint();
-        }
-    }
-
-    void paint (juce::Graphics& g) override
-    {
-        const auto bounds = getLocalBounds().toFloat().reduced (2.0f);
-        g.setColour (on ? colour : colour.withAlpha (0.15f));
-        g.fillEllipse (bounds);
-        g.setColour (juce::Colours::grey);
-        g.drawEllipse (bounds, 1.0f);
-    }
-
-private:
-    juce::Colour colour;
-    bool on = false;
-
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (LedIndicator)
-};
 
 // ============================================================================
 //  SoundChopperAudioProcessorEditor
@@ -66,12 +36,12 @@ public:
 private:
     void updateRhythmSourceVisibility (bool usingMidi);
     void updateAdvancedVisibility (bool advanced);
+    void updateFilterVisibility (bool filterOn);
     void updateWindowSize();
     int  computeNumRows() const noexcept;
     int  computeMaxRows() const noexcept;
     void syncRhythmSourceButtons();
     void syncRhythmPatternButtons();
-    void setMidiLedVisibility (bool shouldBeVisible);
 
     SoundChopperAudioProcessor& processorRef;
     bool midiModeActive = false;
@@ -89,83 +59,19 @@ private:
         rhythmPatternAttachment;
     juce::OwnedArray<juce::Button> rhythmPatternButtons;
 
-    // ---- MIDI info label (MIDI Input mode only) -----------------------
-    juce::Label midiInfoLabel;
-
-    // ---- MIDI Source (MIDI Input mode only – Logic IAC Driver workaround) --
-    juce::Label    midiSourceLabel;
-    juce::ComboBox midiSourceCombo;
-    juce::Array<juce::MidiDeviceInfo> midiDevices;  // list populated in constructor
-
-    // ---- Gate Note (MIDI Input mode only) ----------------------------
-    juce::Label    gateNoteLabel;
-    juce::ComboBox gateNoteCombo;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment>
-        gateNoteAttachment;
-
-    // ---- Bypass Note (MIDI Input mode only) --------------------------
-    juce::Label    bypassNoteLabel;
-    juce::ComboBox bypassNoteCombo;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment>
-        bypassNoteAttachment;
-
-    // ---- Gate Length --------------------------------------------------
-    juce::Label  gateLengthLabel;
-    juce::Slider gateLengthSlider;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment>
-        gateLengthAttachment;
-
-    // ---- Fade Time ----------------------------------------------------
-    juce::Label  fadeTimeLabel;
-    juce::Slider fadeTimeSlider;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment>
-        fadeTimeAttachment;
-
     // ---- Dry / Wet ----------------------------------------------------
     juce::Label  dryWetLabel;
     juce::Slider dryWetSlider;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment>
         dryWetAttachment;
 
-    // ---- Filter On ----------------------------------------------------
-    juce::Label        filterEnabledLabel;
-    juce::ToggleButton filterEnabledButton;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment>
-        filterEnabledAttachment;
-
-    // ---- Filter Type --------------------------------------------------
-    juce::Label    filterTypeLabel;
-    juce::ComboBox filterTypeCombo;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment>
-        filterTypeAttachment;
-
-    // ---- Filter Freq --------------------------------------------------
-    juce::Label  filterFreqLabel;
-    juce::Slider filterFreqSlider;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment>
-        filterFreqAttachment;
-
-    // ---- Filter Q -----------------------------------------------------
-    juce::Label  filterQLabel;
-    juce::Slider filterQSlider;
-    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment>
-        filterQAttachment;
-
-    // ---- LED indicators -----------------------------------------------
-    juce::Label  midiLedLabel;
-    LedIndicator midiLed    { juce::Colours::white };
-
-    juce::Label  gateLedLabel;
-    LedIndicator gateLed    { juce::Colours::limegreen };
-
-    juce::Label  bypassLedLabel;
-    LedIndicator bypassLed  { juce::Colours::red };
+    // ---- Sub-panels ---------------------------------------------------
+    MidiModePanel midiPanel;
+    FilterPanel   filterPanel;
+    AdvancedPanel advancedPanel;
 
     // ---- Advanced toggle button ---------------------------------------
     juce::ToggleButton advancedButton;
-
-    bool filterOnActive = false;
-    void updateFilterVisibility (bool filterOn);
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SoundChopperAudioProcessorEditor)
 };
