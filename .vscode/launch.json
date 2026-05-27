@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run JUCE Standalone",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/SoundChopper_artefacts/Debug/Standalone/SoundChopper.app/Contents/MacOS/SoundChopper",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopOnEntry": false,
+      "terminal": "console"
+    }
+  ]
+}

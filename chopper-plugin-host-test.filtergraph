@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FILTERGRAPH>
+  <FILTER uid="2" x="0.7524999999999999" y="0.1" useARA="0">
+    <PLUGIN name="MIDI Input" descriptiveName="" format="Internal" category="I/O devices"
+            manufacturer="JUCE" version="1.0" file="" uniqueId="a9e4f9eb"
+            isInstrument="0" fileTime="0" infoUpdateTime="0" numInputs="0"
+            numOutputs="0" isShell="0" hasARAExtension="0" uid="a9e4f9eb"/>
+    <STATE>0.</STATE>
+    <LAYOUT>
+      <INPUTS>
+        <BUS index="0" layout="disabled"/>
+      </INPUTS>
+      <OUTPUTS>
+        <BUS index="0" layout="disabled"/>
+      </OUTPUTS>
+    </LAYOUT>
+  </FILTER>
+  <FILTER uid="3" x="0.5" y="0.9" useARA="0">
+    <PLUGIN name="Audio Output" descriptiveName="" format="Internal" category="I/O devices"
+            manufacturer="JUCE" version="1.0" file="" uniqueId="724248cb"
+            isInstrument="0" fileTime="0" infoUpdateTime="0" numInputs="2"
+            numOutputs="0" isShell="0" hasARAExtension="0" uid="724248cb"/>
+    <STATE>0.</STATE>
+    <LAYOUT>
+      <INPUTS>
+        <BUS index="0" layout="L R"/>
+      </INPUTS>
+      <OUTPUTS>
+        <BUS index="0" layout="disabled"/>
+      </OUTPUTS>
+    </LAYOUT>
+  </FILTER>
+  <FILTER uid="4" x="0.25" y="0.9" useARA="0">
+    <PLUGIN name="MIDI Output" descriptiveName="" format="Internal" category="I/O devices"
+            manufacturer="JUCE" version="1.0" file="" uniqueId="9d5bbb00"
+            isInstrument="0" fileTime="0" infoUpdateTime="0" numInputs="0"
+            numOutputs="0" isShell="0" hasARAExtension="0" uid="9d5bbb00"/>
+    <STATE>0.</STATE>
+    <LAYOUT>
+      <INPUTS>
+        <BUS index="0" layout="disabled"/>
+      </INPUTS>
+      <OUTPUTS>
+        <BUS index="0" layout="disabled"/>
+      </OUTPUTS>
+    </LAYOUT>
+  </FILTER>
+  <FILTER uid="5" x="0.365" y="0.5423076923076923" useARA="0" uiLastX_Normal="1700"
+          uiLastY_Normal="226" uiopen_Normal="1">
+    <PLUGIN name="SoundChopper" format="AudioUnit" category="Effect" manufacturer="ErwinDB"
+            version="0.1.0" file="AudioUnit:Effects/aumf,SCho,Erwi" uniqueId="77447260"
+            isInstrument="0" fileTime="0" infoUpdateTime="19e4cd4ac70" numInputs="2"
+            numOutputs="2" isShell="0" hasARAExtension="0" uid="77447260"/>
+    <STATE>848.hAGaoMGcv.C1AHv.DTfAGfPBJrvDTTgEWvUag4VclE1XzUmbkIGUjEFcgwUYrUVak4Fcs3VXsU1UyUmXzkGbkckckI2bo8laTQWdvU1WP7fZ0MVYPwVcmklaSQWXzUFUtEVakIQQxcWZOAAY..............vBRHphZ3CSL27GO8eZ9vDyMKBeSzkOQJRQibl1P3yy6v5HtIkz.....DyHos6O.B..MAwnY6ietbeWy.cT......F6bquOYJSYus7aQ5S+pUfchAPp.....HMCM3PDQESTxD8CPDELUkjavUGcQ+fDV8TczAWczIwTCg1aP.fDgUWal8TDAjuUCISHvG...vyO30FafXWYxMWZu4VOhDiKvHBHk41XuQVZtcVOhTEUF0BNh7iOfvyTuUmajMDZuAGbkImO7.UPRETSfjFY8HhX4AWXyMmSuQWYh.hcgwVck0iHyfiKvHxK9vCTAIUPMARZj0iHjIWdWUFch.hcgwVck0iHw.CLt.iHu3COPEjTA0DHoQVOhXVXjUFUo0VYh.hcgwVck0iHw.iKvHxK9vCTAIUPMARZj0iHlkFazUlbE4VXhwVYjIBH1EFa0UVOh.iKvHxK9vCTAIUPMARZj0iHlkFazUlbFIWYwIBH1EFa0UVOhjSN43RN4jSNyfSN1PCNzLCNh7hO7.UPRETSfjFY8HhYowFckIWTh.hcgwVck0iHv3xMw.CLv.CLyfSLzXSN2HyMh7hO7.UPRETSfjFY8HhYowFckIGU4AWYh.hcgwVck0iHv3BLh7hO7.UPRETSfjFY8HxYgQWYLUlamQGZh.hcgwVck0iH0.iKvHxK9vCTAIUPMARZj0iHmEFck4zazUlHfXWXrUWY8HxL13BLh7hO7.UPRETSfjFY8HhbnkGcn0FTgQGckImah.hcgwVck0iHw3BLh7hO7.UPRETSfjFY8HhbnkGcn01TuUmbiUlHfXWXrUWY8HBLt.iHu3COuL0a04FYCg1avAWYx4C.XUkazkFcrUFY.f..Y.fI.rB.3..P.fD.MAvW.PF.oA.z.TM.WCP1.vM.dC.4.bN.tCv7.TO.5Kv8........BD..........X...................C..</STATE>
+    <LAYOUT>
+      <INPUTS>
+        <BUS index="0" layout="L R"/>
+      </INPUTS>
+      <OUTPUTS>
+        <BUS index="0" layout="L R"/>
+      </OUTPUTS>
+    </LAYOUT>
+  </FILTER>
+  <FILTER uid="6" x="0.5600000000000001" y="0.2961538461538462" useARA="0"
+          uiLastX_Normal="1632" uiLastY_Normal="705" uiopen_Normal="1">
+    <PLUGIN name="MIDI Logger" format="Internal" category="Synth" manufacturer="JUCE"
+            version="1.0.0" file="MIDI Logger" uniqueId="97e2978f" isInstrument="1"
+            fileTime="0" infoUpdateTime="0" numInputs="0" numOutputs="0"
+            isShell="0" hasARAExtension="0" uid="97e2978f"/>
+    <STATE>98.VMjLgjE....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOyQWXzUlO7TWZSQWXzUFH2kFYzgVOhXCLvHBHnUVZmgFc8HxLv.iHu3COuLGcgQWY9..</STATE>
+    <LAYOUT>
+      <INPUTS/>
+      <OUTPUTS/>
+    </LAYOUT>
+  </FILTER>
+  <FILTER uid="10" x="0.13125" y="0.2134615384615385" useARA="0" uiLastX_Normal="483"
+          uiLastY_Normal="258" uiopen_Normal="1">
+    <PLUGIN name="AUAudioFilePlayer" format="AudioUnit" category="Generator"
+            manufacturer="Apple" version="1.6.0" file="AudioUnit:Generators/augn,afpl,appl"
+            uniqueId="6163676e" isInstrument="0" fileTime="0" infoUpdateTime="19e4cd4ac70"
+            numInputs="0" numOutputs="2" isShell="0" hasARAExtension="0"
+            uid="6163676e"/>
+    <STATE>543.hAGaoMGcv.C1AHv.DTfAGfPBJr.Gc3wGgvUag4VclE1XzUmbkIGUjEFcg8EDarVPUAkbkMWYzAUYxMWZyQWYtQ2TzEFcksTY4c0b0IFc4AWYWYWYxMWZu4FUzkGbk8EDOXVZrUVKxUlYkIWYtMVYyQkag0VYRDFbvwFPgxvzM3vCPDQFXYTZrUlSg0VYWIUYmk1atMmWIM2TkwVYiQWYjYTZrU1WPDyKV8Fa00VYy8BQgQWXfTjb2klauzTcyk1Xu.UXtQWYxE1KB8VctMVYubUXrslKsA2LgJA0SPQEVbAFYngWRU1Yo8laD8VYywzauAmVRU1Yo8laDEFcg8EDPjzbSUFakMFckQlTkcVZu4lVRU1Yo8laNEVakgvSP.G...........T50G..fA...kd8A..X...3HKe...F...f7.Fgq+A..aBfC3bnvkiN3HKe...F..D................................................................fxWC......InkSkcGHRU1Yo8laIHQXlAGaP.fDgU2YtEMHPXkQowVYfDCVU4FcoQGakQF.H.PF.XB.q.PR.DE.YAfW..G.0Afd.rG.8A.g.zH.UB.o.fM.ZCv3.HO.8G.DArQ.bDviA.Y.aF.mADZ.iF.pArZ.xB.......HP..........HB..................Dvt</STATE>
+    <LAYOUT>
+      <INPUTS/>
+      <OUTPUTS>
+        <BUS index="0" layout="L R"/>
+      </OUTPUTS>
+    </LAYOUT>
+  </FILTER>
+  <CONNECTION srcFilter="2" srcChannel="4096" dstFilter="6" dstChannel="4096"/>
+  <CONNECTION srcFilter="5" srcChannel="0" dstFilter="3" dstChannel="0"/>
+  <CONNECTION srcFilter="5" srcChannel="1" dstFilter="3" dstChannel="1"/>
+  <CONNECTION srcFilter="6" srcChannel="4096" dstFilter="5" dstChannel="4096"/>
+  <CONNECTION srcFilter="10" srcChannel="0" dstFilter="5" dstChannel="0"/>
+  <CONNECTION srcFilter="10" srcChannel="1" dstFilter="5" dstChannel="1"/>
+</FILTERGRAPH>
