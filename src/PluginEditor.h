@@ -33,13 +33,14 @@ public:
     // Called on the message thread whenever rhythmSource changes
     void parameterChanged (const juce::String& paramID, float newValue) override;
 
+    int  computeNumRows() const noexcept;
+    int  computeMaxRows() const noexcept;
+
 private:
     void updateRhythmSourceVisibility (bool usingMidi);
     void updateAdvancedVisibility (bool advanced);
     void updateFilterVisibility (bool filterOn);
     void updateWindowSize();
-    int  computeNumRows() const noexcept;
-    int  computeMaxRows() const noexcept;
     void syncRhythmSourceButtons();
     void syncRhythmPatternButtons();
 

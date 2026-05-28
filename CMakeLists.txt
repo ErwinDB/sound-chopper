@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Sets the minimum deployment target
-# macOS 10.11 is the minimum required by JUCE
-set(CMAKE_OSX_DEPLOYMENT_TARGET "10.11" CACHE STRING "" FORCE)
+# macOS 10.13 is the minimum required by JUCE 8.x
+set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13" CACHE STRING "" FORCE)
 # Builds a binary that works on Apple Silicon (arm64) and Intel-based Macs
 set(CMAKE_OSX_ARCHITECTURES "x86_64;arm64" CACHE STRING "" FORCE)
 
@@ -100,6 +100,9 @@ target_compile_definitions(SoundChopper
 #   juce_gui_basics        – Component, Button, Slider, etc. (future UI)
 #   juce_gui_extra         – extra widgets, e.g. CodeEditorComponent
 # ---------------------------------------------------------------------------
+enable_testing()
+add_subdirectory(tests)
+
 target_link_libraries(SoundChopper
     PRIVATE
         SoundChopperBinaryData

@@ -121,6 +121,53 @@ cmake -B build -DCMAKE_BUILD_TYPE=Debug
 cmake --build build --target SoundChopper_VST3 -- -j4
 ```
 
+### Linux note
+
+On Linux, JUCE requires additional system libraries. Install them before configuring:
+
+```bash
+sudo apt install libx11-dev libasound2-dev libxrandr-dev libfontconfig1-dev libfreetype-dev
+```
+
+If CMake cannot find the Freetype headers, prefix the configure command:
+
+```bash
+CFLAGS="-I/usr/include/freetype2" CXXFLAGS="-I/usr/include/freetype2" cmake -B build -DCMAKE_BUILD_TYPE=Release
+```
+
+---
+
+## Running the Unit Tests
+
+The test suite uses [Catch2 v3](https://github.com/catchorg/Catch2), which is fetched automatically by CPM during the configure step.
+
+### Build and run
+
+```bash
+# Configure (if not already done)
+cmake -B build -DCMAKE_BUILD_TYPE=Debug
+
+# Build the test executable
+cmake --build build --target SoundChopper_Tests -- -j4
+
+# Run all tests
+ctest --test-dir build -V
+```
+
+Or as a one-liner after configuring:
+
+```bash
+cmake --build build --target SoundChopper_Tests -- -j4 && ctest --test-dir build -V
+```
+
+### Filtering tests
+
+Pass `-R <pattern>` to `ctest` to run only tests whose names match the pattern:
+
+```bash
+ctest --test-dir build -V -R PluginProcessor
+```
+
 ---
 
 ## Using the Plug-in in a DAW
